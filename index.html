@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+    <div class="reveal">
+			<div class="slides">
+        <section>Software Design Principles</section>
+				<section data-background-image='https://miro.medium.com/max/875/1*uAZjtzAJm6xWDM29vvMQVA.png'></section>
+        <section>
+          <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*vFhKyjZZTJ2oetpy24Kwxg.png" alt="">
+        </section>
+			  <section>
+            <section>
+              <h2>DRY</h2>
+              <img src="https://www.nickang.com/static/fe7590acb2e288e609ef2948318e4a15/0a47e/BSP-what-is-dry.png" alt="DRY">
+              <p class="fragment fade up">DRY is an acronym for <span style="color: red">Do not Repeat Yourself<span></p>
+            </section>
+            <section>
+              <h1>Benefits of DRY</h1>
+              <ul>
+                <li class="fragment">Reduced number of lines of code</li>
+                <li class="fragment">Easier maintainability</li>
+                <li class="fragment">Code reusability</li>
+                <li class="fragment">Readability</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Example of non DRY code</h3>
+              <pre>
+                <code>
+let chips = ['corn', 'pita', 'potato', 'tortilla'];
+
+console.log(chips[0]);
+console.log(chips[1]);
+console.log(chips[2]);
+console.log(chips[3]);
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Example of DRY code</h3>
+              <pre>
+                <code>
+let chips = ['corn', 'pita', 'potato', 'tortilla'];
+chips.forEach(item => {
+  console.log(item);
+});
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Code reusability example</h3>
+              <pre>
+                <code>
+const logItems = (array) => {
+  array.forEach(item => {
+    console.log(item);
+  });
+}
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Conclusion</h3>
+              <p class="fragment">
+                Whenever you finish writing some code, you should always look back to see if there is any way you can DRY it up
+              </p>
+            </section>
+        </section>
+        <section>
+          <section>
+           <h2>Kiss Principle</h2>
+           <p class='fragment'>KISS stands for <span style='color: red'>Keep it Simple, Stupid</span></p>
+          </section>
+          <section>
+            <img src="https://p7x7q5i4.rocketcdn.me/en/wp-content/uploads/sites/2/2021/07/kiss-principle.png" alt="KISS Principle">
+          </section>
+
+          <section>
+            <h3>What is simple program</h3>
+            <h5 class=''>Simple program is program that: </h5>
+            <ul>
+              <li class='fragment'>has less features/parts in it</li>
+              <li class="fragment">does not have unused/dead code</li>
+              <li class="fragment">doesn't have many parts that are depended on other parts</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How to write simple code</h3>
+            <ul>
+              <li class="fragment">Ensure your function names translate to the purpose of that function</li>
+              <li class="fragment">Ensure your function has a single responsibility.</li>
+              <li class="fragment">Avoid global states and behaviors like as much as you can.</li>
+              <li class="fragment">Delete unused code</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Benefits</h3>
+            <ul>
+              <li class="fragment">Maintainability</li>
+              <li class="fragment">Readability</li>
+              <li class="fragment">Easier to test</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Conclusion</h3>
+            <p class='fragment'>
+              While writing your code always think if the program is easy to read and understand,
+              is it easy to extend your code base. If not than try to refactor it.
+            </p>
+          </section>
+        </section>
+      </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	<script src="//localhost:35729/livereload.js?snipver=1" async="" defer=""></script></body>
+</html>
+
